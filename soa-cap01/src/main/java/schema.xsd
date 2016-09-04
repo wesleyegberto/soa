@@ -1,0 +1,26 @@
+<xs:schema xmlns:tns="http://servicos.estoque.knight.com/"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0"
+	targetNamespace="http://servicos.estoque.knight.com/">
+	<xs:element name="listarLivros" type="tns:listarLivros" />
+	<xs:element name="listarLivrosResponse" type="tns:listarLivrosResponse" />
+	
+	<xs:complexType name="listarLivros">
+		<xs:sequence />
+	</xs:complexType>
+	
+	<xs:complexType name="listarLivrosResponse">
+		<xs:sequence>
+			<xs:element name="return" type="tns:livro" minOccurs="0" maxOccurs="unbounded" />
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="livro">
+		<xs:sequence>
+			<xs:element name="anoDePublicacao" type="xs:int"minOccurs="0" />
+			<xs:element name="autores" type="xs:string" nillable="true" sminOccurs="0" maxOccurs="unbounded" />
+			<xs:element name="editora" type="xs:string" minOccurs="0" />
+			<xs:element name="nome" type="xs:string" minOccurs="0" />
+			<xs:element name="resumo" type="xs:string" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>
